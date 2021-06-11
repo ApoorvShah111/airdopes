@@ -1,8 +1,22 @@
 <html>
     <title>HomePage</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="stylesheets.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <!--<script src="jspart.js"></script>-->
+        <script>
+            console.log("JS is connected");
+            $(document).ready(function() {
+                $('ul li').mouseenter(function(){
+                    $(this).animate({
+                    });
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="stylesheets.css" type="text/css"/>
+    </head>
     <body>
             <ul class="nav">
                <li id="logoList" class="navlist">
@@ -19,7 +33,7 @@
             </ul>
         <div class="airdopes">
             <div class="left column">
-                <img src="dopes.png" alt="pic" style="width: 100%;">
+                <img id="mainimg" src="dopes.png" alt="pic" style="width: 100%;">
             </div>
         </div>
         <div class="introduction">
