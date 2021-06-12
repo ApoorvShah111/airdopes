@@ -7,34 +7,69 @@
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
         <!--<script src="jspart.js"></script>-->
         <script>
+            c=0;
             console.log("JS is connected");
+            window.addEventListener('scroll',function(){
+                if(window.scrollY>=860 &&c==0)
+                {   
+                    c=1;
+                    $('.introduction h1').animate({fontSize:130},500);
+                    $('.introduction h3').animate({fontSize:90},500);
+                }
+                if(window.scrollY<860 && c==1)
+                {
+                    c=0;
+                    $('.introduction h1').animate({fontSize:90},500);
+                    $('.introduction h1').animate({fontSize:60},500);
+                }
+            });
             $(document).ready(function() {
-                $('ul li').mouseenter(function(){
-                    $(this).animate({
-                    });
+                $('#mainimg').mouseenter(function(){
+                    $('.bodd').animate({backgroundColor:"#ffe609",backgroundImage: "download.svg"},500);
+                    console.log("ok");
+                });
+                $('#mainimg').mouseleave(function(){
+                    $('.bodd').animate({backgroundColor:"#000000", backgroundImage: "download.svg"},500);
+                    console.log("left");
+                });
+                $('.navlink').mouseenter(function(){
+                    $(this).animate({fontSize:20,backgroundColor: "#c70f0f", borderRadius:30},500);
+                });
+                $('.navlink').mouseleave(function(){
+                    $(this).animate({fontSize:15, backgroundColor: "#000000"},500);
+                });
+                $('.navlinkSpecial').mouseenter(function(){
+                    $(this).animate({fontSize:20, backgroundColor: "#80ff00",color:'#000000',borderRadius:30},500);
+                });
+                $('.navlinkSpecial').mouseleave(function(){
+                    $(this).animate({fontSize:15, backgroundColor: "#000000",color:'#ffffff'},500);
                 });
             });
         </script>
         <link rel="stylesheet" href="stylesheets.css" type="text/css"/>
     </head>
-    <body>
+    <body class='bodd'>
             <ul class="nav">
                <li id="logoList" class="navlist">
                     <a href="indexx.html"><img class="logo" src="https://github.com/Tanisha-agr/my-website/blob/main/Screenshot%202021-06-05%20150800m.jpg?raw=true" alt="logo"></a>
                 </li> 
-                <li class="navlist"><a class="navlink" href="indexx.html">Home</a></li>
-                <li class="navlist"><a class="navlink" href="HowToStart.html">Other Products</a></li>
-                <li class="navlist"><a class="navlink" href="FundFinder.html">Support</a></li>
+                <li class="navlist"><a class="navlink" id="red" href="indexx.html">Home</a></li>
+                <li class="navlist"><a class="navlink" id="red" href="HowToStart.html">Other Products</a></li>
+                <li class="navlist"><a class="navlink" id="red" href="FundFinder.html">Support</a></li>
                 
-                <li class="navlist"><a class="navlink" href="AboutUs.html">About us</a></li>
-                <li class="navlist"><a id="SpecialHover" class="navlink" href="SignIn.html" target="_blank">Sign In</a></li>
-                <li class="navlist"><a id="SpecialHover" class="navlink" href="Regester.html" target="_blank">Register </a></li>
+                <li class="navlist" ><a class="navlink" id="red"href="AboutUs.html">About us</a></li>
+                <li class="navlist" ><a id="SpecialHover" class="navlinkSpecial" href="SignIn.html" target="_blank">Sign In</a></li>
+                <li class="navlist"><a id="SpecialHover" class="navlinkSpecial" href="Regester.html" target="_blank">Register </a></li>
                 <li class="navlist" id="newbutton" style=" float: right; margin-right:40px;"><button>View Cart</button></li>
             </ul>
         <div class="airdopes">
             <div class="left column">
                 <img id="mainimg" src="dopes.png" alt="pic" style="width: 100%;">
             </div>
+            <div id="colorPallet" >
+                
+            </div>
+
         </div>
         <div class="introduction">
             <h1>Introducing</h1>
