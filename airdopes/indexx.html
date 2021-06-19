@@ -5,46 +5,9 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-        <!--<script src="jspart.js"></script>-->
+        <script src="jspart.js"></script>
         <script>
-            c=0;
-            console.log("JS is connected");
-            window.addEventListener('scroll',function(){
-                if(window.scrollY>=860 &&c==0)
-                {   
-                    c=1;
-                    $('.introduction h1').animate({fontSize:130},500);
-                    $('.introduction h3').animate({fontSize:90},500);
-                }
-                if(window.scrollY<860 && c==1)
-                {
-                    c=0;
-                    $('.introduction h1').animate({fontSize:90},500);
-                    $('.introduction h1').animate({fontSize:60},500);
-                }
-            });
-            $(document).ready(function() {
-                $('#mainimg').mouseenter(function(){
-                    $('.bodd').animate({backgroundColor:"#ffe609",backgroundImage: "download.svg"},500);
-                    console.log("ok");
-                });
-                $('#mainimg').mouseleave(function(){
-                    $('.bodd').animate({backgroundColor:"#000000", backgroundImage: "download.svg"},500);
-                    console.log("left");
-                });
-                $('.navlink').mouseenter(function(){
-                    $(this).animate({fontSize:20,backgroundColor: "#c70f0f", borderRadius:30},500);
-                });
-                $('.navlink').mouseleave(function(){
-                    $(this).animate({fontSize:15, backgroundColor: "#000000"},500);
-                });
-                $('.navlinkSpecial').mouseenter(function(){
-                    $(this).animate({fontSize:20, backgroundColor: "#80ff00",color:'#000000',borderRadius:30},500);
-                });
-                $('.navlinkSpecial').mouseleave(function(){
-                    $(this).animate({fontSize:15, backgroundColor: "#000000",color:'#ffffff'},500);
-                });
-            });
+            
         </script>
         <link rel="stylesheet" href="stylesheets.css" type="text/css"/>
     </head>
@@ -66,10 +29,8 @@
             <div class="left column">
                 <img id="mainimg" src="dopes.png" alt="pic" style="width: 100%;">
             </div>
-            <div id="colorPallet" >
-                
+            <div id="colorPallet">
             </div>
-
         </div>
         <div class="introduction">
             <h1>Introducing</h1>
@@ -78,4 +39,4 @@
             <h1>BOAT Airdopes 441 - Wireless Earbuds</h1>
         </div>
     </body>
-    </html>
+</html>
